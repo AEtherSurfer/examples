@@ -1,4 +1,9 @@
 define(function(require, exports, module) {
-  // choose your test here
-  require('src/examples/views/Scrollview/example.js');
+  var example = 'views/Scrollview/example';
+  if(window.location.hash) {
+    example = window.location.hash.replace(/^#/, '');
+  }
+  console.log(example);
+  var url = 'src/examples/' + example + '.js';
+  require([url]);
 });
